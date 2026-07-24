@@ -1,0 +1,270 @@
+.app-shell {
+  width: min(100%, 660px);
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: 20px 16px 28px;
+}
+
+.app-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+  color: var(--ink);
+}
+
+.app-header.compact {
+  align-items: center;
+}
+
+.app-header.compact > div {
+  flex: 1;
+}
+
+.eyebrow {
+  margin: 0 0 3px;
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font: 700 27px/1.08 var(--heading);
+  letter-spacing: 0;
+}
+
+h2 {
+  font: 700 16px/1.2 var(--heading);
+  letter-spacing: 0;
+}
+
+.camera-stage {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: #142329;
+  border: 1px solid #28454d;
+  border-radius: 8px;
+}
+
+.camera-stage video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.permit-overlay {
+  position: absolute;
+  inset: 6% 10%;
+  width: 80%;
+  height: 88%;
+  object-fit: contain;
+  opacity: 0.5;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.camera-status {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: rgb(11 27 33 / 88%);
+  color: #fff;
+  font-size: 14px;
+}
+
+.camera-status.error,
+.request-error {
+  color: #8d2028;
+}
+
+.camera-status.error {
+  background: #fee9e9;
+}
+
+.capture-panel {
+  padding-top: 16px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.capture-actions {
+  display: grid;
+  grid-template-columns: 48px 1fr 48px;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+button {
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.capture-button,
+.secondary-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 52px;
+  padding: 0 20px;
+  border-radius: 6px;
+  background: var(--teal);
+  color: #fff;
+  font-weight: 700;
+}
+
+.capture-button:disabled {
+  cursor: progress;
+  opacity: 0.7;
+}
+
+.utility-button,
+.icon-button {
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink);
+}
+
+.button-spacer {
+  width: 48px;
+  height: 48px;
+}
+
+.review-banner {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 14px;
+  border: 1px solid #e3bd68;
+  border-radius: 6px;
+  background: #fff7df;
+  color: #5e3b00;
+}
+
+.review-banner.verified {
+  border-color: #99cec5;
+  background: #e8f7f3;
+  color: #12594f;
+}
+
+.review-banner p {
+  margin-top: 3px;
+  font-size: 13px;
+}
+
+.result-list {
+  display: grid;
+  gap: 8px;
+}
+
+.result-field {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-left: 4px solid #79bfb3;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.result-field.needs-review {
+  border-color: #e5c77d;
+  border-left-color: #d69c27;
+  background: #fffbf0;
+}
+
+.field-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.confidence {
+  font-weight: 700;
+}
+
+.result-field strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--ink);
+  font: 700 18px/1.25 var(--heading);
+  letter-spacing: 0;
+}
+
+.review-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  color: #8a5b00;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.server-warnings {
+  margin-top: 16px;
+  padding: 14px;
+  border-left: 4px solid #c95d47;
+  background: #fdf0ea;
+}
+
+.server-warnings p {
+  margin-top: 8px;
+  color: #6f3023;
+  font-size: 13px;
+}
+
+.secondary-action {
+  width: 100%;
+  margin-top: 18px;
+  background: #173b45;
+}
+
+.spin {
+  animation: spin 0.9s linear infinite;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (min-width: 700px) {
+  .app-shell {
+    padding-top: 32px;
+  }
+}

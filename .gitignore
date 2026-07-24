@@ -1,0 +1,5 @@
+node_modules/
+dist/
+public/ara-permit-assets/
+.DS_Store
+*.local
