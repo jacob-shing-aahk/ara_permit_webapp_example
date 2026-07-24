@@ -140,7 +140,14 @@ function App() {
     window.history.pushState(null, '', '#results')
   }
 
+  const stopCamera = () => {
+    streamRef.current?.getTracks().forEach((track) => track.stop())
+    streamRef.current = null
+    if (videoRef.current) videoRef.current.srcObject = null
+  }
+
   const processImage = async (image: Blob) => {
+    stopCamera()
     setIsProcessing(true)
     setRequestError('')
     try {
@@ -170,6 +177,7 @@ function App() {
     canvas.height = video.videoHeight
     const context = canvas.getContext('2d')
     context?.drawImage(video, 0, 0, canvas.width, canvas.height)
+    stopCamera()
     canvas.toBlob((image) => image && void processImage(image), 'image/jpeg', 0.94)
   }
 
