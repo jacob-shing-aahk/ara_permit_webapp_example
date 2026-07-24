@@ -11,6 +11,7 @@ import {
 import './App.css'
 
 const API_URL = 'https://aahk-apar-service-189323391968.asia-east2.run.app'
+const APP_BASE_URL = import.meta.env.BASE_URL
 
 type ExtractedField<T> = {
   value: T | null
@@ -256,7 +257,7 @@ function App() {
 
       <section className="camera-stage" aria-label="Camera preview">
         <video ref={videoRef} muted playsInline autoPlay />
-        <img className="permit-overlay" src="/ARA Permit Template.png" alt="Permit alignment guide" />
+        <img className="permit-overlay" src={`${APP_BASE_URL}ARA Permit Template.png`} alt="Permit alignment guide" />
         {isStartingCamera && (
           <div className="camera-status"><LoaderCircle className="spin" size={24} aria-hidden="true" /> Opening camera</div>
         )}

@@ -1,13 +1,13 @@
 {
   "name": "ARA Permit Scan",
   "short_name": "Permit Scan",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#e8f0ef",
   "theme_color": "#16766d",
   "icons": [
     {
-      "src": "/ARA Permit Template.png",
+      "src": "./ARA Permit Template.png",
       "sizes": "any",
       "type": "image/png",
       "purpose": "any"
